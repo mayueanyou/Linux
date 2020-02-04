@@ -1,0 +1,2 @@
+#!/bin/sh
+mcs $1.cs
