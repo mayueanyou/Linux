@@ -1,2 +1,2 @@
-# Ubuntu
-Something I have in Ubuntu.
+# Linux
+Something I have in Linux.
