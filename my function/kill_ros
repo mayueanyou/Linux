@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo killall roscore
-sudo killall rosmaster
