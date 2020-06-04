@@ -1,5 +1,5 @@
 #!/bin/sh
 
 work_dir=$(pwd)
-source_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
 echo "source $work_dir/setup.bash">> "$source_dir"/MySource/ros.bash

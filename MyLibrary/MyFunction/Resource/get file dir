@@ -1,2 +1,5 @@
 script_abs=$(readlink -f "$0")
 script_dir=$(dirname $script_abs)
+
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
+work_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
