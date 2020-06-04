@@ -1,4 +1,0 @@
-#!/bin/sh
-
-work_dir=$(pwd)
-echo "source $work_dir/setup.bash">> ~/MySource/setup.bash
