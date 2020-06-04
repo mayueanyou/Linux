@@ -2,3 +2,5 @@
 
 work_dir=$(pwd)
 echo "source $work_dir/MySource/setup.bash">> ~/.bashrc
+source ~/.bashrc
+chmod 777 "$work_dir" -R
