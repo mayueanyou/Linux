@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo 112411 | sudo -S killall gzserver & sudo killall gzclient

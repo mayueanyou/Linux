@@ -1,0 +1,4 @@
+#!/bin/sh
+
+gnome-terminal -e "bash -c \"gnome-terminal   -- "ls" & echo 112411 | sudo -S gzclient; exec bash\""
+gzserver -u $1.world

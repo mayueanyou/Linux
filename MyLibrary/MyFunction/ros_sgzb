@@ -1,0 +1,8 @@
+#!/bin/sh
+
+work_dir=$(pwd)
+work_name="${work_dir##*/}"
+echo "source $work_dir/devel/setup.bash">> ~/MySource/setup.bash
+echo "export GAZEBO_MODEL_PATH=$work_dir/src/"$work_name"_gazebo/resources/models":'${GAZEBO_MODEL_PATH}'>> $work_dir/devel/setup.bash
+echo "export GAZEBO_RESOURCE_PATH=$work_dir/src/"$work_name"_gazebo/resources":'${GAZEBO_RESOURCE_PATH}'>> $work_dir/devel/setup.bash
+echo "export GAZEBO_PLUGIN_PATH=$work_dir/src/"$work_name"_gazebo/resources/plugins/build":'${GAZEBO_PLUGIN_PATH}'>> $work_dir/devel/setup.bash

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gzserver -u $1.world
