@@ -1,3 +1,4 @@
-#!/bin/sh
-
-echo 112411 | sudo -S killall gzserver & sudo killall gzclient
+#!/bin/bash
+source_dir=$(cd `dirname $0`; pwd)
+source "$source_dir"/password
+echo $password | sudo -S killall gzserver & sudo killall gzclient

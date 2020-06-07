@@ -1,2 +1,4 @@
-#!/bin/sh
-echo 112411 | sudo -S apt-get update && sudo apt-get upgrade
+#!/bin/bash
+source_dir=$(cd `dirname $0`; pwd)
+source "$source_dir"/password
+echo $password | sudo -S apt-get update && sudo apt-get upgrade
