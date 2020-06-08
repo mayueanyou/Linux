@@ -46,8 +46,8 @@ def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w=
     try:
         set_model_state_prox = rospy.ServiceProxy('gazebo/set_model_state', SetModelState)
         set_model_state_prox(modelstate)
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+    except rospy.ServiceException as e:
+        print ("Service call failed: %s"%e)
 
 def gzb_set_model_state(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w='*',
     lin_x='*',lin_y='*',lin_z='*',ang_x='*',ang_y='*',ang_z='*'):

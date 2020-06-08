@@ -10,8 +10,8 @@ def main(name):
         delete_model_prox = rospy.ServiceProxy('gazebo/delete_model',DeleteModel)
         delete_model = delete_model_prox(name)
         return delete_model.success
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+    except rospy.ServiceException as e:
+        print ("Service call failed: %s"%e)
 
 def gzb_delete_model(name):
     return main(name)

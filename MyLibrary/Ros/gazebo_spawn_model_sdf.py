@@ -17,8 +17,8 @@ def main(path,name,x,y,z):
         spawn_model_prox = rospy.ServiceProxy('gazebo/spawn_sdf_model', SpawnModel)
         spawn_model=spawn_model_prox(name, sdf_file, " ", initial_pose, "world")
         return spawn_model.success
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+    except rospy.ServiceException as e:
+        print ("Service call failed: %s"%e)
 
 def gzb_spawn_model(path,name,x,y,z):
     return main(path,name,x,y,z)
