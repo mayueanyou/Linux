@@ -1,5 +1,7 @@
 script_abs=$(readlink -f "$0")
 script_dir=$(dirname $script_abs)
 
-source_dir=$(dirname "$(cd `dirname $0`; pwd)")
-work_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+sh=$(dirname "$(cd `dirname $0`; pwd)")
+bash=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+
+sudo scp -r melodic_hector_quadrotor/ jindi@10.51.54.91:/ tmp/
