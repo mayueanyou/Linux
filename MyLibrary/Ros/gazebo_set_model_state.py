@@ -6,7 +6,7 @@ from gazebo_get_model_state import*
 from geometry_msgs.msg import*
 
 def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w='*',
-    lin_x='*',lin_y='*',lin_z='*',ang_x='*',ang_y='*',ang_z='*'):
+    lin_x='*',lin_y='*',lin_z='*',ang_x='*',ang_y='*',ang_z='*',timeout=None):
     modelstate=ModelState()
     pose = Pose()
     twist= Twist()
@@ -42,17 +42,17 @@ def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w=
     modelstate.twist=twist
     modelstate.reference_frame="world"
 
-    rospy.wait_for_service('gazebo/set_model_state')
     try:
+        rospy.wait_for_service('gazebo/set_model_state',int(timeout))
         set_model_state_prox = rospy.ServiceProxy('gazebo/set_model_state', SetModelState)
         set_model_state_prox(modelstate)
     except rospy.ServiceException as e:
         print ("Service call failed: %s"%e)
 
 def gzb_set_model_state(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w='*',
-    lin_x='*',lin_y='*',lin_z='*',ang_x='*',ang_y='*',ang_z='*'):
-    main(name,poi_x,poi_y,poi_z,ori_x,ori_y,ori_z,ori_w,lin_x,lin_y,lin_z,ang_x,ang_y,ang_z)
+    lin_x='*',lin_y='*',lin_z='*',ang_x='*',ang_y='*',ang_z='*',timeout=None):
+    main(name,poi_x,poi_y,poi_z,ori_x,ori_y,ori_z,ori_w,lin_x,lin_y,lin_z,ang_x,ang_y,ang_z,timeout)
 
 if __name__=="__main__":
     main(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],
-    sys.argv[9],sys.argv[10],sys.argv[11],sys.argv[12],sys.argv[13],sys.argv[14])
+    sys.argv[9],sys.argv[10],sys.argv[11],sys.argv[12],sys.argv[13],sys.argv[14],sys.argv[15])
