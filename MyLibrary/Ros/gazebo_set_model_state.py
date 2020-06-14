@@ -10,7 +10,7 @@ def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w=
     modelstate=ModelState()
     pose = Pose()
     twist= Twist()
-    pose,twist=gzb_get_model_state(str(name),"world")
+    pose,twist=gzb_get_model_state(str(name),"world",timeout)
     if(poi_x!='*'):
         pose.position.x = float(poi_x)
     if(poi_y!='*'):
@@ -43,9 +43,13 @@ def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w=
     modelstate.reference_frame="world"
 
     try:
-        rospy.wait_for_service('gazebo/set_model_state',int(timeout))
+        if(timeout==None):
+            rospy.wait_for_service('gazebo/set_model_state')
+        else:
+            rospy.wait_for_service('gazebo/set_model_state',int(timeout))
         set_model_state_prox = rospy.ServiceProxy('gazebo/set_model_state', SetModelState)
         set_model_state_prox(modelstate)
+        print("gazebo/set_model_state %s!"%str(name))
     except rospy.ServiceException as e:
         print ("Service call failed: %s"%e)
 

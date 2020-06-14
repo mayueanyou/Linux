@@ -13,9 +13,16 @@ def main(path,name,x,y,z,timeout=None):
     sdf_file = f.read()
 
     try:
-        rospy.wait_for_service('gazebo/spawn_sdf_model',int(timeout))
+        if(timeout==None):
+            rospy.wait_for_service('gazebo/spawn_sdf_model')
+        else:
+            rospy.wait_for_service('gazebo/spawn_sdf_model',int(timeout))
         spawn_model_prox = rospy.ServiceProxy('gazebo/spawn_sdf_model', SpawnModel)
         spawn_model=spawn_model_prox(name, sdf_file, " ", initial_pose, "world")
+        if(spawn_model.success):
+            print("gazebo/spawn_sdf_model %s successful!"%str(name))
+        else:
+            print("gazebo/spawn_sdf_model %s failed!"%str(name))
         return spawn_model.success
     except rospy.ServiceException as e:
         print ("Service call failed: %s"%e)
