@@ -1,0 +1,4 @@
+#!/bin/bash
+source_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+source "$source_dir/password"
+echo $password | sudo -S chmod 777 /dev/mem /dev/gpiomem
