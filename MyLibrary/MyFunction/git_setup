@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "git user.name"
+read name
+echo "git user.email"
+read email
+git config --global user.name "$name"
+git config --global user.email "$email"
