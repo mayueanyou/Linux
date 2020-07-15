@@ -1,0 +1,3 @@
+#!/bin/sh
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
+gedit "$source_dir"/MySource/setup.bash
