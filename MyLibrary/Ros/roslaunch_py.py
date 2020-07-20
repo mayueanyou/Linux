@@ -1,6 +1,4 @@
-import sys
-import roslaunch
-import rospy
+import sys,rospy,roslaunch
 
 def main(name,path):
     rospy.init_node(str(name))

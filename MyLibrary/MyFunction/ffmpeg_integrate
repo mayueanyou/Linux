@@ -7,10 +7,10 @@ fi
 if [ $command = "-f" ];then
   for f in ./*; do echo "file '$f'" >> videos_to_join.txt; done
 elif [ $command = "-v" ];then
-  ffmpeg -f concat -safe 0 -i videos_to_join.txt -c copy output.mp4
+  ffmpeg -f concat -safe 0 -i videos_to_join.txt -c copy output_integrate.mp4
 elif [ $command = "-a" ];then
   for f in ./*; do echo "file '$f'" >> videos_to_join.txt; done
-  ffmpeg -f concat -safe 0 -i videos_to_join.txt -c copy output.mp4
+  ffmpeg -f concat -safe 0 -i videos_to_join.txt -c copy output_integrate.mp4
 else
     echo "-f to generate the list file"
     echo "-v to generate the video"

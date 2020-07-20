@@ -1,5 +1,4 @@
-import rospy
-import sys
+import sys,rospy
 from gazebo_msgs.srv import SetModelState
 from gazebo_msgs.msg import ModelState
 from gazebo_get_model_state import*

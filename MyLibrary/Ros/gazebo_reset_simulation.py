@@ -1,4 +1,4 @@
-import rospy
+import sys,rospy
 from std_srvs.srv import Empty
 
 def main(timeout=None):

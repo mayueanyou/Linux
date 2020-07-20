@@ -1,5 +1,4 @@
-import rospy
-import sys
+import sys,rospy
 from gazebo_msgs.srv import SpawnModel
 from geometry_msgs.msg import Pose
 

@@ -1,5 +1,4 @@
-import rospy
-import sys
+import sys,rospy
 from gazebo_msgs.srv import DeleteModel
 
 def main(name,timeout=None):

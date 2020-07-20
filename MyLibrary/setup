@@ -10,6 +10,6 @@ echo "#!/bin/sh">>"$work_dir/password"
 echo "password=$password">>"$work_dir/password"
 echo "source $work_dir/MySource/setup.bash">> ~/.bashrc
 chmod 777 "$work_dir" -R
-rm "$work_dir"/MySource/ros.bash
-touch "$work_dir"/MySource/ros.bash
-echo "#!/usr/bin/env sh">>"$work_dir"/MySource/ros.bash
+rm "$work_dir"/MySource/ros_pkg.bash
+touch "$work_dir"/MySource/ros_pkg.bash
+echo "#!/usr/bin/env sh">>"$work_dir"/MySource/ros_pkg.bash
