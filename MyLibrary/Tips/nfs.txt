@@ -1,0 +1,14 @@
+sudo apt install nfs-kernel-server
+service nfs-server start
+service nfs-server status
+systemctl restart nfs-kernel-server
+
+/etc/exports
+https://blog.csdn.net/qq_36357820/article/details/78488077
+local_path ip(rw,sync,no_root_squash,no_subtree_check)
+example: /home/my/github/share/ 216.171.38.168(rw,sync,no_root_squash,no_subtree_check)
+
+/etc/fstab
+https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+ip:target_path local_ nfs auto,user,exec,rw,sync,dev,suid 0 0
+example: 216.171.38.35:/home/my/github/share /home/my/github/share/ nfs auto,user,exec,rw,sync,dev,suid 0 0
