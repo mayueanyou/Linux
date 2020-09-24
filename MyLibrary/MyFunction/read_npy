@@ -1,0 +1,3 @@
+#!/bin/bash
+source_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+python3 "$source_dir/Python/read_npy.py" $1

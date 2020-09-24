@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 work_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
 
