@@ -1,2 +1,0 @@
-#!/bin/sh
-g++ $1.cpp -o $1 `pkg-config opencv --cflags --libs`

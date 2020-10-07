@@ -2,4 +2,16 @@
 
 work_dir=$(pwd)
 source_dir=$(dirname "$(cd `dirname $0`; pwd)")
-echo "source $work_dir/setup.bash">> "$source_dir"/MySource/setup.bash
+command=$1
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "-r" ];then
+  echo "source $work_dir/setup.bash">> "$source_dir"/MySource/ros_pkg.bash
+elif [ $command = "-m" ];then
+  echo "source $work_dir/$2">> "$source_dir"/MySource/setup.bash
+else
+    echo "-m to source in setup.bash"
+    echo "-r to source in ros_pkg.bash"
+fi

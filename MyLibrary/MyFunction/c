@@ -1,2 +1,22 @@
 #!/bin/sh
-g++ $1.cpp -o $1 -pthread -std=c++11 
+
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
+command=$1
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "-c" ];then
+  gcc $2 -o ${2%.*}
+elif [ $command = "-c++" ];then
+  g++ $2 -o ${2%.*} -pthread -std=c++11
+elif [ $command = "-opencv" ];then
+  g++ $2 -o ${2%.*} `pkg-config opencv --cflags --libs`
+elif [ $command = "-systemc" ];then
+  g++ $2 -o ${2%.*} -I/home/my/systemc-2.3.3/include/ -L/home/my/systemc-2.3.3/lib-linux64 -lsystemc
+else
+    echo "-c compile c file"
+    echo "-c++ compile c++ file"
+    echo "-opencv compile c++ file with opencv"
+    echo "-systemc compile c++ file with systemc"
+fi

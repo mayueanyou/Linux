@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+source "$source_dir"/password
+command=$1
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "-ros" ];then
+  echo $password | sudo -S killall roscore && sudo killall rosmaster
+elif [ $command = "-gzb" ];then
+  echo $password | sudo -S killall gzserver && sudo killall gzclient
+elif [ $command = "-rviz" ];then
+  echo $password | sudo -S killall rviz
+else
+    echo "-ros to kill ros"
+    echo "-gzb to kill gazebo"
+    echo "-rviz to kill rviz"
+fi
