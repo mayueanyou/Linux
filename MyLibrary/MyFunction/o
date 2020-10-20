@@ -6,11 +6,11 @@ command=$1
 if [ ! -n "$1" ] ;then
   command="None"
 fi
-if [ $command = "-b" ];then
+if [ $command = "b" ];then
   gedit ~/.bashrc
-elif [ $command = "-m" ];then
+elif [ $command = "m" ];then
   gedit "$source_dir"/MySource/setup.bash
-elif [ $command = "-r" ];then
+elif [ $command = "r" ];then
   gedit "$source_dir"/MySource/ros_pkg.bash
 else
     echo "-b to open ~/.bashrc"

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source_dir=$(dirname "$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)")
+command=$1
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "npy" ];then
+  python3 "$source_dir/Python/read_npy.py" $2
+elif [ $command = "pt" ];then
+  python3 "$source_dir/Python/read_pt.py" $2
+else
+    echo "-npy to read npy file"
+    echo "-pt to read pt file"
+fi
