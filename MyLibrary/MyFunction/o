@@ -12,8 +12,11 @@ elif [ $command = "m" ];then
   gedit "$source_dir"/MySource/setup.bash
 elif [ $command = "r" ];then
   gedit "$source_dir"/MySource/ros_pkg.bash
+elif [ $command = "n" ];then
+  nautilus ./
 else
     echo "-b to open ~/.bashrc"
     echo "-m open MySource/setup.bash"
     echo "-r to open ros_pkg.bash"
+    echo "-n to use nautilus"
 fi

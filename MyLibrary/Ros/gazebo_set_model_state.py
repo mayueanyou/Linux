@@ -1,7 +1,7 @@
 import sys,rospy
 from gazebo_msgs.srv import SetModelState
 from gazebo_msgs.msg import ModelState
-from gazebo_get_model_state import*
+from Ros import gazebo_get_model_state
 from geometry_msgs.msg import*
 
 def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w='*',
@@ -9,7 +9,7 @@ def main(name,poi_x='*',poi_y='*',poi_z='*',ori_x='*',ori_y='*',ori_z='*',ori_w=
     modelstate=ModelState()
     pose = Pose()
     twist= Twist()
-    pose,twist=gzb_get_model_state(str(name),"world",timeout)
+    pose,twist=gazebo_get_model_state.main(str(name),"world",timeout)
     if(poi_x!='*'):
         pose.position.x = float(poi_x)
     if(poi_y!='*'):
