@@ -1,0 +1,17 @@
+#!/bin/sh
+
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
+command=$1
+topic=$2
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "i" ];then
+  rosrun image_view image_view image:=$topic
+elif [ $command = "p" ];then
+  echo $PATH
+else
+    echo "-i to show image"
+    echo "-p to echo PATH"
+fi

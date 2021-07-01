@@ -15,5 +15,5 @@ def euler_to_quaternion(roll, pitch, yaw):
     return {"x":qx,"y":qy,'z':qz,'w':qw}
 
 if __name__ == '__main__':
-    #print(quaternion_to_rpy(float(sys.argv[1]),float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4])))
-    print(euler_to_quaternion(float(sys.argv[1]),float(sys.argv[2]),float(sys.argv[3])))
+    print(quaternion_to_euler(float(sys.argv[1]),float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4])))
+    #print(euler_to_quaternion(float(sys.argv[1]),float(sys.argv[2]),float(sys.argv[3])))

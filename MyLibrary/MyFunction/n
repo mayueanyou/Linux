@@ -1,0 +1,16 @@
+#!/bin/sh
+
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
+command=$1
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "./" ];then
+  nautilus ./
+elif [ $command = "p" ];then
+  echo $PATH
+else
+    echo "-./ to open current folder"
+    echo "-p to echo PATH"
+fi

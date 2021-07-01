@@ -1,0 +1,5 @@
+#!/bin/sh
+
+source_dir=$(dirname "$(cd `dirname $0`; pwd)")
+command=$1
+gnome-terminal -- bash -c "$command; exec bash;"
