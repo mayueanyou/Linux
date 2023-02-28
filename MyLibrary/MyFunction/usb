@@ -1,0 +1,21 @@
+#!/bin/sh
+
+command=$1
+
+if [ ! -n "$1" ] ;then
+  command="None"
+fi
+if [ $command = "-a" ];then
+  sudo usbip --debug attach -r $2 -b $3
+elif [ $command = "-d" ];then
+  sudo usbip detach -p $2
+elif [ $command = "-lp" ];then
+  sudo usbip port
+elif [ $command = "-ld" ];then
+  dmesg | tail
+else
+    echo "-a attach: <REMOTE_IP> <BUS_ID>"
+    echo "-d detach: <Port#>"
+    echo "-lp show port connection"
+    echo "-ld show device name"
+fi
