@@ -1,4 +1,6 @@
 #!/bin/bash
+git config user.email "mayueanyou@gmail.com"
+git config user.name "Yue Ma"
 git add -A
 git commit -a -m "update"
 git push
