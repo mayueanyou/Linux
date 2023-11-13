@@ -1,5 +1,4 @@
-import sys
-import os
+import os,sys
 
 def main(name):
     os.system(str(name))

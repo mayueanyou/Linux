@@ -1,0 +1,18 @@
+#!/bin/sh
+
+echo "password"
+read password
+
+work_dir=$(pwd)
+password_path="work_dir/Shell_Function/password"
+
+
+rm $password_path
+touch $password_path
+echo "#!/bin/sh">>$password_path
+echo "password=$password">>$password_path
+echo "source $work_dir/Source/setup.bash">> ~/.bashrc
+chmod 777 "$work_dir" -R
+rm "$work_dir"/Source/ros_pkg.bash
+touch "$work_dir"/Source/ros_pkg.bash
+echo "#!/usr/bin/env sh">>"$work_dir"/Source/ros_pkg.bash
