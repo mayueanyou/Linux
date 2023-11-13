@@ -4,7 +4,7 @@ echo "password"
 read password
 
 work_dir=$(pwd)
-password_path="work_dir/Shell_Function/password"
+password_path="$work_dir/Shell_Function/password"
 
 
 rm $password_path

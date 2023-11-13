@@ -9,9 +9,9 @@ fi
 if [ $command = "b" ];then
   gedit ~/.bashrc
 elif [ $command = "m" ];then
-  gedit "$source_dir"/MySource/setup.bash
+  gedit "$source_dir"/Source/setup.bash
 elif [ $command = "r" ];then
-  gedit "$source_dir"/MySource/ros_pkg.bash
+  gedit "$source_dir"/Source/ros_pkg.bash
 elif [ $command = "n" ];then
   nautilus ./
 else

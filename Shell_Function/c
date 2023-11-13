@@ -12,6 +12,10 @@ elif [ $command = "-c++" ];then
   g++ $2 -o ${2%.*} -pthread -std=c++11
 elif [ $command = "-opencv" ];then
   g++ $2 -o ${2%.*} `pkg-config opencv --cflags --libs`
+elif [ $command = "-pi" ];then
+  g++ $2 -o ${2%.*} -lwiringPi -lwiringPiDev -lpthread -lm -lcrypt -lrt
+elif [ $command = "-p" ];then
+  g++ $2 -o ${2%.*} -pthread -std=c++11 -I/usr/include/python2.7 -lpython2.7
 elif [ $command = "-systemc" ];then
   g++ $2 -o ${2%.*} -I/home/my/systemc-2.3.3/include/ -L/home/my/systemc-2.3.3/lib-linux64 -lsystemc
 else
@@ -19,4 +23,6 @@ else
     echo "-c++ compile c++ file"
     echo "-opencv compile c++ file with opencv"
     echo "-systemc compile c++ file with systemc"
+    echo "-pi compile c++ file with raspberry pi"
+    echo "-p compile c++ file with python"
 fi

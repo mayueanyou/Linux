@@ -7,11 +7,11 @@ if [ ! -n "$1" ] ;then
   command="None"
 fi
 if [ $command = "npy" ];then
-  python3 "$source_dir/Python/read_npy.py" $2
+  python3 "$source_dir/Python_Script/read_npy.py" $2
 elif [ $command = "pt" ];then
-  python3 "$source_dir/Python/read_pt.py" $2
+  python3 "$source_dir/Python_Script/read_pt.py" $2
 elif [ $command = "json" ];then
-  python3 "$source_dir/Python/read_json.py" $2
+  python3 "$source_dir/Python_Script/read_json.py" $2
 else
     echo "-npy to read npy file"
     echo "-pt to read pt file"
