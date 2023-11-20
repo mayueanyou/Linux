@@ -45,27 +45,36 @@ class Tcp_Client:
     
     def echo_back(self, message='Hello'):
         try:
-            message = bytes(message, encoding='utf-8')
-            self.sock.sendall(message)
-
-            amount_received = 0
-            amount_expected = len(message)
-
-            while amount_received < amount_expected:
-                data = self.sock.recv(16)
-                amount_received += len(data)
-                print(f'received {data}')
+            self.send_data(message)
+            data = self.receive_data(len(message))
+            print(f'received {str(data, encoding="utf-8")}')
 
         finally:
             print('closing socket', self.server_address)
             self.sock.close()
+    
+    def send_data(self,data):
+        data = bytes(data, encoding='utf-8')
+        self.sock.sendall(data)
+    
+    def receive_data(self,length):
+        data = self.sock.recv(length)
+        return data
+    
+    def receive_data_backup(self,length):
+        amount_received = 0
+        data = ''
+        while amount_received < length:
+            data += self.sock.recv(16)
+            amount_received += len(data)
+        return data 
 
 def server():
     server = Tcp_Server(5000)
 
 def clent():
     client = Tcp_Client('128.230.21.183', 5000)
-    client.echo_back()
+    client.echo_back('asdfasdfjkaddasfasdfkldjasflasf')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
