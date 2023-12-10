@@ -1,28 +1,29 @@
 import os,sys,socket,threading,argparse
 
 class Tcp_Server:
-    def __init__(self, port, call_back = None) -> None:
+    def __init__(self, port, ip=None, call_back = None, call_back_arg = None) -> None:
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = (socket.gethostbyname(socket.gethostname()), port)
+        ip = socket.gethostbyname(socket.gethostname() if ip == None else ip
+        self.server_address = (ip), port)
         print('starting server up on {} port {}'.format(*self.server_address))
         self.sock.bind(self.server_address)
         self.sock.listen()
         self.connection_list = []
         self.client_address_list = []
         self.call_back = self.echo_back if call_back==None else call_back
-        self.accept_call()
+        self.accept_call(call_back_arg)
     
     def __del__(self):
         print('closing up on {} port {}'.format(*self.server_address))
         self.sock.close()
     
-    def accept_call(self):
+    def accept_call(self,call_back_arg):
         while True:
             connection, client_address = self.sock.accept()
-            threading._start_new_thread(self.call_back,(connection,client_address))
+            threading._start_new_thread(self.call_back,(connection,client_address,call_back_arg))
             
-    def echo_back(self, connection, client_address, buffer_size = 2048):
+    def echo_back(self, connection, client_address, call_back_arg, buffer_size = 2048):
         try:
             print('connection from', client_address)
             while True:
