@@ -9,6 +9,12 @@ https://github.com/flozz/nautilus-terminal#nautilus-terminal-doesnt-show-up
 
 https://www.ssh.com/academy/ssh/keygen
 
+## system monitor
+
+`sudo apt-get install nmon`
+
+`sudo nmon`
+
 
 ## Tips
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-20-04
