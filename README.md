@@ -22,6 +22,9 @@ restart the service
 
 
 ## Tips
+
+use vnc remote desktop
+
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-20-04
 
 update the default terminal
