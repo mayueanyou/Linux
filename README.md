@@ -9,6 +9,12 @@ https://github.com/flozz/nautilus-terminal#nautilus-terminal-doesnt-show-up
 
 https://www.ssh.com/academy/ssh/keygen
 
+### none-passwd login
+
+`ssh-keygen -t ecdsa -b 521`
+
+`ssh-copy-id -i ~/.ssh/key user@host`
+
 ## chrome remote desktop
 restart the service
 
