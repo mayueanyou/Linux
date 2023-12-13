@@ -9,6 +9,11 @@ https://github.com/flozz/nautilus-terminal#nautilus-terminal-doesnt-show-up
 
 https://www.ssh.com/academy/ssh/keygen
 
+## chrome remote desktop
+restart the service
+
+`systemctl restart chrome-remote-desktop@`
+
 ## system monitor
 
 `sudo apt-get install nmon`
