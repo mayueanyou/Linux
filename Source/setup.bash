@@ -6,4 +6,4 @@ export PATH=$PATH:"$work_dir"/Shell_Function
 export PYTHONPATH=$PYTHONPATH:"$work_dir"/Python_Script
 
 source "$work_dir"/Source/alias.bash
-#source "$work_dir"/MySource/systemc.bash
+#source "$work_dir"/Source/systemc.bash
