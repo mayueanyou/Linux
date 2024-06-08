@@ -36,3 +36,15 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vn
 ### update the default terminal
 
 `sudo update-alternatives --config x-terminal-emulator`
+
+### waydroid
+
+####Install Instructions
+
+https://docs.waydro.id/usage/install-on-desktops
+
+`waydroid init -s GAPPS`
+
+#### Google Play Certification
+
+https://docs.waydro.id/faq/google-play-certification 
