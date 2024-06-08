@@ -39,11 +39,15 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vn
 
 ### waydroid
 
-####Install Instructions
+#### Install Instructions
 
 https://docs.waydro.id/usage/install-on-desktops
 
 `waydroid init -s GAPPS`
+
+#### Install weston
+
+`sudo apt install weston`
 
 #### Google Play Certification
 
