@@ -26,6 +26,15 @@ restart the service
 
 `sudo nmon`
 
+## steam
+
+`sudo dpkg --add-architecture i386`
+
+`sudo add-apt-repository multiverse`
+
+`sudo apt-get update`
+
+`sudo apt-get install steam`
 
 ## Tips
 
