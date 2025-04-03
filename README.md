@@ -38,6 +38,14 @@ restart the service
 
 ## Tips
 
+## Sysmonitor Indicator
+
+`sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor`
+
+`sudo apt-get update`
+
+`sudo apt-get install indicator-sysmonitor`
+
 ### use vnc remote desktop
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-20-04
