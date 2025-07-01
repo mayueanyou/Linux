@@ -9,6 +9,10 @@ https://github.com/flozz/nautilus-terminal#nautilus-terminal-doesnt-show-up
 
 https://www.ssh.com/academy/ssh/keygen
 
+## wifi
+
+`network update wlan0 --ipv4-method auto --ipv6-method auto --wifi-auth wpa-psk --wifi-mode infrastructure --wifi-ssid <wifi name, in quotes if there’re spaces> --wifi-psk <wifi password>`
+
 ### none-passwd login
 
 `ssh-keygen -t ecdsa -b 521`
