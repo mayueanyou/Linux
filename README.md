@@ -42,7 +42,11 @@ restart the service
 
 ## Tips
 
-## Sysmonitor Indicator
+### Pip install editable local package
+
+`pip install -e /path/to/your/local/package`
+
+### Sysmonitor Indicator
 
 `sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor`
 
